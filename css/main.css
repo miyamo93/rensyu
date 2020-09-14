@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! destyle.css v1.0.13 | MIT License | https://github.com/nicolas-cusan/destyle.css */
 /* Reset box-model
    ========================================================================== */
@@ -459,3 +460,5 @@ template {
 [hidden] {
   display: none;
 }
+
+/* IEハック用mixin */

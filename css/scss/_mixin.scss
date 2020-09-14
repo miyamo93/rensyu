@@ -1,0 +1,11 @@
+// レスポンシブ対応mixin//////////////////
+$breakpoints: (
+  'md': 'screen and (min-width: 960px)',
+  'sm': 'screen and (min-width: 560px)',
+) !default;
+
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}

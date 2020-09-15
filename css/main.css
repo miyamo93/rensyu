@@ -462,3 +462,137 @@ template {
 }
 
 /* IEハック用mixin */
+html {
+  font-size: 62.5%;
+}
+
+h2 {
+  font-size: 6rem;
+  font-family: 'Noto Serif', cursive;
+}
+
+h2:nth-child(2) {
+  background: red;
+}
+
+section:nth-child(3) {
+  background: url(../images/fv-bgi_02@2x.jpg);
+  background-repeat: no-repeat;
+}
+
+section:nth-child(5) {
+  background: url(../images/contact-bgi@2x.jpg);
+  background-repeat: no-repeat;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+}
+
+.mainHeader {
+  max-width: 1000px;
+  font-family: 'Noto Serif', cursive;
+  display: flex;
+  justify-content: space-between;
+  line-height: 96px;
+  margin: 0 auto;
+  color: #fff;
+}
+
+.mainHeader__logo {
+  font-size: 2.6rem;
+}
+
+.mainHeader__nav .headerLists {
+  display: flex;
+  font-size: 1.6rem;
+  width: 349px;
+  justify-content: space-between;
+}
+
+.mainContent__top .slick-slide:focus {
+  outline: none;
+}
+
+.mainContent__top .topSlider .sliderWrap img {
+  width: 100%;
+}
+
+.mainContent__top .topSlider .sliderWrap__text {
+  color: #fff;
+}
+
+.mainContent__top .topSlider .sliderWrap__text--main {
+  font-size: 7rem;
+}
+
+.mainContent__top .topSlider .sliderWrap__text--sub {
+  font-size: 4rem;
+}
+
+.mainContent__concept {
+  height: 100vh;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.mainContent__concept h3 {
+  font-size: 5rem;
+  text-align: center;
+}
+
+.mainContent__concept .conceptWrap {
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.mainContent__concept .conceptWrap__text {
+  width: 440px;
+  line-height: 30px;
+}
+
+.mainContent__concept .conceptWrap__img {
+  background-image: url("../images/concept-image@2x.jpg");
+  width: 440px;
+  height: 240px;
+}
+
+.mainContent__service {
+  height: 100vh;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.mainContent__works {
+  height: 100vh;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.mainContent__works .worksWrap__lists {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mainContent__works .worksWrap__list {
+  width: 320px;
+}
+
+.mainContent__contact {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.mainContent .btmText {
+  font-size: 9rem;
+  color: #F8F7F8;
+  font-family: 'Noto Serif', cursive;
+  text-align: left;
+}
+
+.mainContent .btmText:nth-child(2n) {
+  text-align: right;
+}

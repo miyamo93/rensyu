@@ -2,3 +2,132 @@
 @import "scss/setting";
 @import "scss/mixin";
 
+html{
+  font-size: 62.5%;
+}
+
+h2{
+  font-size: 6rem;
+  font-family: 'Noto Serif', cursive;	
+  &:nth-child(2){
+    background:red;
+  }
+}
+
+section{
+  &:nth-child(3){
+    background: url(../images/fv-bgi_02@2x.jpg);
+    background-repeat:no-repeat ;
+  }
+  &:nth-child(5){
+    background: url(../images/contact-bgi@2x.jpg);
+    background-repeat:no-repeat ;
+  }
+}
+
+header{
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+}
+
+
+.mainHeader{
+  max-width: 1000px;
+  font-family: 'Noto Serif', cursive;	
+  display: flex;
+  justify-content: space-between;
+  line-height: 96px;
+  margin: 0 auto;
+  color: #fff;
+  &__logo{
+    font-size: 2.6rem;
+  }
+  &__nav{
+    .headerLists{
+      display: flex;
+      font-size: 1.6rem;
+      width: 349px;
+      justify-content: space-between;
+    }
+  }
+}
+
+.mainContent{
+  &__top{
+    .slick-slide:focus {
+      outline: none;
+    }
+    .topSlider{
+      .sliderWrap{
+        img{
+          width: 100%;
+        }
+        &__text{
+          color: #fff;
+          &--main{
+            font-size: 7rem;
+          }
+          &--sub{
+            font-size: 4rem;
+          }
+        }
+      }
+    }
+  }
+  &__concept{
+    height: 100vh;
+    max-width: 1000px;
+    margin: 0 auto;
+    h3{
+      font-size: 5rem;
+      text-align: center;
+    }
+    .conceptWrap{
+      font-size: 1.6rem;
+      display: flex;
+      justify-content: space-between;
+      &__text{
+        width: 440px;
+        line-height: 30px;
+      }
+      &__img{
+        background-image:url("../images/concept-image@2x.jpg") ;
+        width: 440px;
+        height: 240px;
+      }
+    }
+  }
+  &__service{
+    height: 100vh;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  &__works{
+    height: 100vh;
+    max-width: 1000px;
+    margin: 0 auto;
+    .worksWrap{
+      &__lists{
+        display: flex;
+        justify-content: space-between;
+      }
+      &__list{
+        width: 320px;
+      }
+    }
+  }
+  &__contact{
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .btmText{
+    font-size:9rem ;
+    color:#F8F7F8;
+    font-family: 'Noto Serif', cursive;	
+    text-align:left;
+      &:nth-child(2n){
+        text-align: right;
+      }
+  }
+}

@@ -60,14 +60,22 @@ header{
     }
     .topSlider{
       .sliderWrap{
+        position: relative;
         img{
           width: 100%;
+          height: 100vh;
         }
         &__text{
+          font-family: 'Noto Serif', cursive;	
+          position: absolute;
           color: #fff;
+          bottom:300px;
+          left: 10vw;
           &--main{
             font-size: 7rem;
+            letter-spacing: 7px;
           }
+          
           &--sub{
             font-size: 4rem;
           }

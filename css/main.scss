@@ -16,6 +16,7 @@ h2{
   display: flex;
   align-items: center;
   width: 475px;
+  padding-bottom: 100px;
   &:after{
     content:'';
     margin-left: 20px;
@@ -134,7 +135,7 @@ header{
     h3{
       font-size: 5rem;
       text-align: center;
-      padding: 75px 0;
+      padding-bottom: 75px;
     }
     .conceptWrap{
       font-size: 1.6rem;
@@ -155,6 +156,49 @@ header{
   &__service{
     max-width: 1000px;
     margin: 0 auto;
+    
+  }
+  .serviceWrap{
+    &__lists{
+      width: 100%;
+      display: flex;
+      background-color: #000;
+      &--list{
+        width : calc(100% / 3) ;
+        height: 320px;
+        text-align: center;
+        line-height: 320px;
+        color: #fff;
+        font-size: 4rem;
+        cursor: pointer;
+        transition: .5s;
+        
+        &:first-child{
+          background: url("../images/service-img01@2x.jpg");
+          background-repeat: no-repeat;
+          background-size: 100%;
+          &:hover{
+            opacity: 0.5;
+          }
+        }
+        &:nth-child(2){
+          background: url("../images/service-img02@2x.jpg");
+          background-repeat: no-repeat;
+          background-size: 100%;
+          &:hover{
+            opacity: 0.5;
+          }
+        }
+        &:last-child{
+          background: url("../images/sevice-img03@2x.jpg");
+          background-repeat: no-repeat;
+          background-size: 100%;
+          &:hover{
+            opacity: 0.5;
+          }
+        }
+      }
+    }
   }
   &__works{
     max-width: 1000px;
@@ -166,12 +210,22 @@ header{
       }
       &__list{
         width: 320px;
+        &--text{
+          padding: 25px;
+          font-size: 1.6rem;
+          background: #fff;
+        }
       }
     }
   }
   &__contact{
     max-width: 1000px;
     margin: 0 auto;
+    .contactText{
+      font-size: 20px;
+      color: #fff;
+      text-align: center;
+    }
   }
   .btmText{
     font-size:9rem ;
@@ -179,21 +233,36 @@ header{
     font-family: 'Noto Serif', cursive;	
     text-align:left;
     padding-top: 100px;
-      &:nth-child(2n){
+      &.concept{
         text-align: right;
       }
-      &.concept{
-        
-      }
       &.works{
-
+        text-align: left;
+        color: #f8f7f824;
       }
       &.service{
-
+        text-align: right;
+        
       }
       &.contact{
-
+        text-align: left;
+        color: #f8f7f824;
       }
+  }
+  .mainBtn{
+    a{
+      display: block;
+      margin: 0 auto;
+      text-align: center;
+      width: 235px;
+      color: #000;
+      font-size: 1.6rem;
+      background-color: #F7D43F;
+      line-height: 60px;
+      border-radius: 30px;
+      margin-top: 50px;
+    }
+    
   }
 }
 

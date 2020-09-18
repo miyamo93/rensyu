@@ -476,6 +476,7 @@ h2 {
   display: flex;
   align-items: center;
   width: 475px;
+  padding-bottom: 100px;
 }
 
 h2:after {
@@ -595,7 +596,7 @@ header {
 .mainContent__concept h3 {
   font-size: 5rem;
   text-align: center;
-  padding: 75px 0;
+  padding-bottom: 75px;
 }
 
 .mainContent__concept .conceptWrap {
@@ -621,6 +622,53 @@ header {
   margin: 0 auto;
 }
 
+.mainContent .serviceWrap__lists {
+  width: 100%;
+  display: flex;
+  background-color: #000;
+}
+
+.mainContent .serviceWrap__lists--list {
+  width: calc(100% / 3);
+  height: 320px;
+  text-align: center;
+  line-height: 320px;
+  color: #fff;
+  font-size: 4rem;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.mainContent .serviceWrap__lists--list:first-child {
+  background: url("../images/service-img01@2x.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.mainContent .serviceWrap__lists--list:first-child:hover {
+  opacity: 0.5;
+}
+
+.mainContent .serviceWrap__lists--list:nth-child(2) {
+  background: url("../images/service-img02@2x.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.mainContent .serviceWrap__lists--list:nth-child(2):hover {
+  opacity: 0.5;
+}
+
+.mainContent .serviceWrap__lists--list:last-child {
+  background: url("../images/sevice-img03@2x.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.mainContent .serviceWrap__lists--list:last-child:hover {
+  opacity: 0.5;
+}
+
 .mainContent__works {
   max-width: 1000px;
   margin: 0 auto;
@@ -635,9 +683,21 @@ header {
   width: 320px;
 }
 
+.mainContent__works .worksWrap__list--text {
+  padding: 25px;
+  font-size: 1.6rem;
+  background: #fff;
+}
+
 .mainContent__contact {
   max-width: 1000px;
   margin: 0 auto;
+}
+
+.mainContent__contact .contactText {
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
 }
 
 .mainContent .btmText {
@@ -648,8 +708,35 @@ header {
   padding-top: 100px;
 }
 
-.mainContent .btmText:nth-child(2n) {
+.mainContent .btmText.concept {
   text-align: right;
+}
+
+.mainContent .btmText.works {
+  text-align: left;
+  color: #f8f7f824;
+}
+
+.mainContent .btmText.service {
+  text-align: right;
+}
+
+.mainContent .btmText.contact {
+  text-align: left;
+  color: #f8f7f824;
+}
+
+.mainContent .mainBtn a {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  width: 235px;
+  color: #000;
+  font-size: 1.6rem;
+  background-color: #F7D43F;
+  line-height: 60px;
+  border-radius: 30px;
+  margin-top: 50px;
 }
 
 .mainFooter {

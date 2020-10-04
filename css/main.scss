@@ -7,7 +7,30 @@ html{
 }
 
 body{
-  font-family: 'Noto Serif', cursive;	
+  font-family: 'Noto Serif','Noto Serif JP', cursive;	
+}
+
+#loader-bg {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background: #fff;
+  z-index: 1;
+}
+#loader {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  margin-top: -100px;
+  margin-left: -100px;
+  text-align: center;
+  z-index: 2;
 }
 
 h2{
@@ -17,15 +40,17 @@ h2{
   align-items: center;
   width: 475px;
   padding-bottom: 100px;
+  @include mq(){
+    width: 90%;
+    font-size: 3rem;
+  }
   &:after{
     content:'';
     margin-left: 20px;
     border-top: 5px solid #000;
     flex-grow: 1;
   }
-  &.concept{
-    
-  }
+
   &.works{
     color: #fff;
     margin: 0 0 0 auto;
@@ -67,14 +92,48 @@ section{
     background-repeat:no-repeat ;
     background-size: 100%;
     height: 666px;
-
+    @include mq(){
+      background-position: center;
+      background-size: auto;
+      height: auto;
+    }
   }
 }
 
-header{
+.drawer-hamburger{
+  display: none;
+  @include mq(){
+    display: block;
+    right: 0;
+    height: auto;
+  }
+}
+
+.drawer--right.drawer-open .drawer-hamburger {
+  right: 0;
+}
+
+
+
+.headerWrap{
   position: fixed;
   width: 100%;
-  z-index: 9999;
+  z-index: 9;
+}
+
+.headerBg{
+  margin-top:-96px ;
+  transition: .5s;
+  position: fixed;
+  z-index: 8;
+  &.topS{
+    display: block;
+    top: 0;
+    height: 96px;
+    width: 100%;
+    background: #282F35;
+    margin-top: 0;
+  }
 }
 
 
@@ -86,6 +145,7 @@ header{
   line-height: 96px;
   margin: 0 auto;
   color: #fff;
+  z-index: 9999;
   &__logo{
     font-size: 2.6rem;
   }
@@ -95,6 +155,9 @@ header{
       font-size: 1.6rem;
       width: 349px;
       justify-content: space-between;
+      @include mq(){
+        display: none;
+      }
     }
   }
 }
@@ -110,20 +173,35 @@ header{
         img{
           width: 100%;
           height: 100vh;
+          @include mq(){
+            object-fit: cover;
+          }
         }
         &__text{
           font-family: 'Noto Serif', cursive;	
           position: absolute;
           color: #fff;
-          bottom:300px;
+          top:60%;
           left: 10vw;
+          text-align: center;
+          @include mq(){
+            left: 0;
+          }
           &--main{
             font-size: 7rem;
             letter-spacing: 7px;
+            @include mq(){
+              font-size: 3.7rem;
+              left: 0;
+              letter-spacing: 0;
+            }
           }
           
           &--sub{
             font-size: 4rem;
+            @include mq(){
+              font-size: 3rem;
+            }
           }
         }
       }
@@ -136,20 +214,33 @@ header{
       font-size: 5rem;
       text-align: center;
       padding-bottom: 75px;
+      @include mq(){
+        font-size: 2rem;
+      }
     }
     .conceptWrap{
       font-size: 1.6rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      @include mq(){
+        display: block;
+
+      }
       &__text{
         width: 440px;
         line-height: 30px;
+        @include mq(){
+          width: 100%;
+        }
       }
       &__img{
         background-image:url("../images/concept-image@2x.jpg") ;
         width: 440px;
         height: 240px;
+        @include mq(){
+          width: 100%;
+        }
       }
     }
   }
@@ -163,40 +254,61 @@ header{
       width: 100%;
       display: flex;
       background-color: #000;
+      @include mq(){
+        display: block;
+      }
       &--list{
         width : calc(100% / 3) ;
-        height: 320px;
         text-align: center;
-        line-height: 320px;
         color: #fff;
         font-size: 4rem;
         cursor: pointer;
         transition: .5s;
-        
-        &:first-child{
-          background: url("../images/service-img01@2x.jpg");
-          background-repeat: no-repeat;
-          background-size: 100%;
-          &:hover{
-            opacity: 0.5;
+        position: relative;
+        @include mq(){
+          width: 100%;
+        }
+        &:hover{
+          opacity: .5;
+          @include mq(){
+            opacity: 1;
           }
         }
-        &:nth-child(2){
-          background: url("../images/service-img02@2x.jpg");
-          background-repeat: no-repeat;
-          background-size: 100%;
-          &:hover{
-            opacity: 0.5;
-          }
+        img{
+          width: 100%;
         }
-        &:last-child{
-          background: url("../images/sevice-img03@2x.jpg");
-          background-repeat: no-repeat;
-          background-size: 100%;
-          &:hover{
-            opacity: 0.5;
-          }
+        p{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
         }
+        // &:first-child{
+        //   background: url("../images/service-img01@2x.jpg");
+        //   background-repeat: no-repeat;
+        //   background-size: 100%;
+        //   &:hover{
+        //     opacity: 0.5;
+        //   }
+        // }
+        // &:nth-child(2){
+        //   background: url("../images/service-img02@2x.jpg");
+        //   background-repeat: no-repeat;
+        //   background-size: 100%;
+        //   &:hover{
+        //     opacity: 0.5;
+        //   }
+        // }
+        // &:last-child{
+        //   background: url("../images/sevice-img03@2x.jpg");
+        //   background-repeat: no-repeat;
+        //   background-size: 100%;
+        //   &:hover{
+        //     opacity: 0.5;
+        //   }
+        // }
       }
     }
   }
@@ -207,9 +319,20 @@ header{
       &__lists{
         display: flex;
         justify-content: space-between;
+        @include mq(){
+          display: block;
+        }
       }
       &__list{
         width: 320px;
+        @include mq(){
+          width: 100%;
+        }
+        &--img{
+          @include mq(){
+            width: 100%;
+          }
+        }
         &--text{
           padding: 25px;
           font-size: 1.6rem;
@@ -233,6 +356,9 @@ header{
     font-family: 'Noto Serif', cursive;	
     text-align:left;
     padding-top: 100px;
+    @include mq(){
+      font-size: 4rem;
+    }
       &.concept{
         text-align: right;
       }
@@ -272,4 +398,17 @@ header{
   text-align: center;
   font-size: 1.4rem;
   line-height: 79px;
+}
+
+.fadeIn{
+  opacity: 1;
+  transform: translateY(0);
+  transition: 0.8s;
+  transition-delay: .8s;
+}
+.fadeOut{
+  opacity: 0;
+  transition: .8s;
+  transform: translateY(20px);
+  transition-delay: .8s;
 }

@@ -467,7 +467,31 @@ html {
 }
 
 body {
-  font-family: 'Noto Serif', cursive;
+  font-family: 'Noto Serif','Noto Serif JP', cursive;
+}
+
+#loader-bg {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background: #fff;
+  z-index: 1;
+}
+
+#loader {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  margin-top: -100px;
+  margin-left: -100px;
+  text-align: center;
+  z-index: 2;
 }
 
 h2 {
@@ -477,6 +501,13 @@ h2 {
   align-items: center;
   width: 475px;
   padding-bottom: 100px;
+}
+
+@media screen and (max-width: 1024px) {
+  h2 {
+    width: 90%;
+    font-size: 3rem;
+  }
 }
 
 h2:after {
@@ -531,10 +562,50 @@ section:nth-child(5) {
   height: 666px;
 }
 
-header {
+@media screen and (max-width: 1024px) {
+  section:nth-child(5) {
+    background-position: center;
+    background-size: auto;
+    height: auto;
+  }
+}
+
+.drawer-hamburger {
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .drawer-hamburger {
+    display: block;
+    right: 0;
+    height: auto;
+  }
+}
+
+.drawer--right.drawer-open .drawer-hamburger {
+  right: 0;
+}
+
+.headerWrap {
   position: fixed;
   width: 100%;
-  z-index: 9999;
+  z-index: 9;
+}
+
+.headerBg {
+  margin-top: -96px;
+  transition: .5s;
+  position: fixed;
+  z-index: 8;
+}
+
+.headerBg.topS {
+  display: block;
+  top: 0;
+  height: 96px;
+  width: 100%;
+  background: #282F35;
+  margin-top: 0;
 }
 
 .mainHeader {
@@ -545,6 +616,7 @@ header {
   line-height: 96px;
   margin: 0 auto;
   color: #fff;
+  z-index: 9999;
 }
 
 .mainHeader__logo {
@@ -556,6 +628,12 @@ header {
   font-size: 1.6rem;
   width: 349px;
   justify-content: space-between;
+}
+
+@media screen and (max-width: 1024px) {
+  .mainHeader__nav .headerLists {
+    display: none;
+  }
 }
 
 .mainContent__top .slick-slide:focus {
@@ -571,12 +649,25 @@ header {
   height: 100vh;
 }
 
+@media screen and (max-width: 1024px) {
+  .mainContent__top .topSlider .sliderWrap img {
+    object-fit: cover;
+  }
+}
+
 .mainContent__top .topSlider .sliderWrap__text {
   font-family: 'Noto Serif', cursive;
   position: absolute;
   color: #fff;
-  bottom: 300px;
+  top: 60%;
   left: 10vw;
+  text-align: center;
+}
+
+@media screen and (max-width: 1024px) {
+  .mainContent__top .topSlider .sliderWrap__text {
+    left: 0;
+  }
 }
 
 .mainContent__top .topSlider .sliderWrap__text--main {
@@ -584,8 +675,22 @@ header {
   letter-spacing: 7px;
 }
 
+@media screen and (max-width: 1024px) {
+  .mainContent__top .topSlider .sliderWrap__text--main {
+    font-size: 3.7rem;
+    left: 0;
+    letter-spacing: 0;
+  }
+}
+
 .mainContent__top .topSlider .sliderWrap__text--sub {
   font-size: 4rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .mainContent__top .topSlider .sliderWrap__text--sub {
+    font-size: 3rem;
+  }
 }
 
 .mainContent__concept {
@@ -599,6 +704,12 @@ header {
   padding-bottom: 75px;
 }
 
+@media screen and (max-width: 1024px) {
+  .mainContent__concept h3 {
+    font-size: 2rem;
+  }
+}
+
 .mainContent__concept .conceptWrap {
   font-size: 1.6rem;
   display: flex;
@@ -606,15 +717,33 @@ header {
   align-items: center;
 }
 
+@media screen and (max-width: 1024px) {
+  .mainContent__concept .conceptWrap {
+    display: block;
+  }
+}
+
 .mainContent__concept .conceptWrap__text {
   width: 440px;
   line-height: 30px;
+}
+
+@media screen and (max-width: 1024px) {
+  .mainContent__concept .conceptWrap__text {
+    width: 100%;
+  }
 }
 
 .mainContent__concept .conceptWrap__img {
   background-image: url("../images/concept-image@2x.jpg");
   width: 440px;
   height: 240px;
+}
+
+@media screen and (max-width: 1024px) {
+  .mainContent__concept .conceptWrap__img {
+    width: 100%;
+  }
 }
 
 .mainContent__service {
@@ -628,45 +757,49 @@ header {
   background-color: #000;
 }
 
+@media screen and (max-width: 1024px) {
+  .mainContent .serviceWrap__lists {
+    display: block;
+  }
+}
+
 .mainContent .serviceWrap__lists--list {
   width: calc(100% / 3);
-  height: 320px;
   text-align: center;
-  line-height: 320px;
   color: #fff;
   font-size: 4rem;
   cursor: pointer;
   transition: .5s;
+  position: relative;
 }
 
-.mainContent .serviceWrap__lists--list:first-child {
-  background: url("../images/service-img01@2x.jpg");
-  background-repeat: no-repeat;
-  background-size: 100%;
+@media screen and (max-width: 1024px) {
+  .mainContent .serviceWrap__lists--list {
+    width: 100%;
+  }
 }
 
-.mainContent .serviceWrap__lists--list:first-child:hover {
-  opacity: 0.5;
+.mainContent .serviceWrap__lists--list:hover {
+  opacity: .5;
 }
 
-.mainContent .serviceWrap__lists--list:nth-child(2) {
-  background: url("../images/service-img02@2x.jpg");
-  background-repeat: no-repeat;
-  background-size: 100%;
+@media screen and (max-width: 1024px) {
+  .mainContent .serviceWrap__lists--list:hover {
+    opacity: 1;
+  }
 }
 
-.mainContent .serviceWrap__lists--list:nth-child(2):hover {
-  opacity: 0.5;
+.mainContent .serviceWrap__lists--list img {
+  width: 100%;
 }
 
-.mainContent .serviceWrap__lists--list:last-child {
-  background: url("../images/sevice-img03@2x.jpg");
-  background-repeat: no-repeat;
-  background-size: 100%;
-}
-
-.mainContent .serviceWrap__lists--list:last-child:hover {
-  opacity: 0.5;
+.mainContent .serviceWrap__lists--list p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
 }
 
 .mainContent__works {
@@ -679,8 +812,26 @@ header {
   justify-content: space-between;
 }
 
+@media screen and (max-width: 1024px) {
+  .mainContent__works .worksWrap__lists {
+    display: block;
+  }
+}
+
 .mainContent__works .worksWrap__list {
   width: 320px;
+}
+
+@media screen and (max-width: 1024px) {
+  .mainContent__works .worksWrap__list {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .mainContent__works .worksWrap__list--img {
+    width: 100%;
+  }
 }
 
 .mainContent__works .worksWrap__list--text {
@@ -706,6 +857,12 @@ header {
   font-family: 'Noto Serif', cursive;
   text-align: left;
   padding-top: 100px;
+}
+
+@media screen and (max-width: 1024px) {
+  .mainContent .btmText {
+    font-size: 4rem;
+  }
 }
 
 .mainContent .btmText.concept {
@@ -744,4 +901,18 @@ header {
   text-align: center;
   font-size: 1.4rem;
   line-height: 79px;
+}
+
+.fadeIn {
+  opacity: 1;
+  transform: translateY(0);
+  transition: 0.8s;
+  transition-delay: .8s;
+}
+
+.fadeOut {
+  opacity: 0;
+  transition: .8s;
+  transform: translateY(20px);
+  transition-delay: .8s;
 }
